@@ -136,15 +136,22 @@ initial_learning_rate = 0.001
       </code></pre>
       <p>Next, you can use various learning rate scheduling techniques. Here's an example of implementing a simple learning rate decay schedule:</p>
       <pre><code class="python"># Define the learning rate decay schedule
-learning_rate_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
-    initial_learning_rate=initial_learning_rate,
-    decay_steps=10000,  # Adjust the decay steps based on your training schedule
-    decay_rate=0.9,     # Adjust the decay rate as needed
-    staircase=True     # If True, learning rate will decay in discrete intervals
+learning_rate_schedule = 
+tf.keras.optimizers.schedules.
+    ExponentialDecay(
+    initial_learning_rate=
+  initial_learning_rate,
+    decay_steps=10000,  
+ 
+    decay_rate=0.9,    
+    staircase=True     
 )
 
-# Create an optimizer with the learning rate schedule
-optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate_schedule)
+# Create an optimizer with t
+he learning rate schedule
+optimizer = tf.keras.optimizers.
+Adam(learning_rate=
+  learning_rate_schedule)
       </code></pre>
       <p>In this example, the learning rate starts at <code>initial_learning_rate</code> and decreases exponentially over time. You can adjust the <code>decay_steps</code> and <code>decay_rate</code> parameters based on your training requirements.</p>
     </div>
@@ -171,13 +178,17 @@ schedules.ExponentialDecay(
       </code></pre>
       <p>In this section, a learning rate decay schedule is defined using <code>tf.keras.optimizers.schedules.ExponentialDecay</code>. This schedule decreases the learning rate exponentially over time. The <code>initial_learning_rate</code>, <code>decay_steps</code>, and <code>decay_rate</code> parameters control the decay behavior.</p>
       <h2>Creating the Optimizer with Learning Rate Schedule:</h2>
-      <pre><code class="python"># Create an optimizer with the learning rate schedule
-optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate_schedule)
+      <pre><code class="python">
+optimizer = tf.keras.optimizers.
+Adam(learning_rate=
+learning_rate_schedule)
       </code></pre>
       <p>Here, an Adam optimizer is created using the learning rate schedule defined earlier. The optimizer will adjust the learning rate during training according to the specified schedule.</p>
       <h2>Compiling the Model with the Optimizer:</h2>
       <pre><code class="python"># Compile the model with the optimizer
-model.compile(optimizer=optimizer, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+model.compile(optimizer=optimizer, 
+loss='sparse_categorical_crossentropy', 
+      metrics=['accuracy'])
       </code></pre>
       <p>In this step, the model is compiled with the optimizer that incorporates the learning rate schedule. During training, the optimizer will use the learning rate defined by the schedule to update the model's parameters.</p>
     </div>
